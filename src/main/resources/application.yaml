@@ -1,11 +1,32 @@
+#spring:
+#  application:
+#    name: smart_splitter
+#
+#  datasource:
+#    url: jdbc:postgresql://localhost:5433/smartSplitter
+#    username: admin
+#    password: secret
+#    driver-class-name: org.postgresql.Driver
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#
+#server:
+#  port: 8080
+
+
 spring:
   application:
     name: smart_splitter
-
   datasource:
-    url: jdbc:postgresql://localhost:5433/smartSplitter
-    username: admin
-    password: secret
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASS}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -17,4 +38,4 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
 server:
-  port: 8080
+  port: ${PORT:8080}
